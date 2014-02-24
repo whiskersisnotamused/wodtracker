@@ -1,0 +1,48 @@
+  [1m[36m (29.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (10.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateWorkouts (20140224220508)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "workouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "wod" text, "reps" integer, "time" varchar(255), "weight" integer, "date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140224220508"]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/workouts" for 127.0.0.1 at 2014-02-24 14:10:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WorkoutsController#index as HTML
+  [1m[35mWorkout Load (0.2ms)[0m  SELECT "workouts".* FROM "workouts"
+  Rendered workouts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 1361ms (Views: 1327.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-24 14:10:14 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-24 14:10:14 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-24 14:10:14 -0800
+
+
+Started GET "/assets/workouts.css?body=1" for 127.0.0.1 at 2014-02-24 14:10:14 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-24 14:10:14 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-24 14:10:14 -0800
+
+
+Started GET "/assets/workouts.js?body=1" for 127.0.0.1 at 2014-02-24 14:10:14 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-24 14:10:14 -0800
+
+
+Started GET "/workouts/new" for 127.0.0.1 at 2014-02-24 14:10:16 -0800
+Processing by WorkoutsController#new as HTML
+  Rendered workouts/_form.html.erb (232.0ms)
+  Rendered workouts/new.html.erb within layouts/application (262.2ms)
+Completed 200 OK in 273ms (Views: 268.3ms | ActiveRecord: 0.6ms)
